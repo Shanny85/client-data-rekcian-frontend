@@ -1,0 +1,77 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*#navBar {*/
+/*    box-shadow: 3px 0 3px rgb(0, 0, 0);*/
+/*}*/
+
+/*to customize dataTable use with id in helper*/
+/*this is for employee table*/
+[data-column-id="sno"].rdt_TableCol {
+    background-color: #2dd4bf;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "sans-serif";
+    border-top-left-radius: 10px;
+}
+[data-column-id="name"].rdt_TableCol {
+    background-color: #2dd4bf;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "sans-serif";
+}
+[data-column-id="lastName"].rdt_TableCol {
+    background-color: #2dd4bf;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "sans-serif";
+}
+[data-column-id="image"].rdt_TableCol {
+    background-color: #2dd4bf;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "sans-serif";
+}
+[data-column-id="department_name"].rdt_TableCol {
+    background-color: #2dd4bf;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "sans-serif";
+}
+[data-column-id="dob"].rdt_TableCol {
+    background-color: #2dd4bf;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "sans-serif";
+}
+[data-column-id="action"].rdt_TableCol {
+    background-color: #2dd4bf;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "sans-serif";
+    border-top-right-radius: 10px;
+}
+
+/*this is for department table*/
+[data-column-id="snum"].rdt_TableCol {
+    background-color: #ea8a1d;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "sans-serif";
+    border-top-left-radius: 10px;
+}
+[data-column-id="departmentName"].rdt_TableCol {
+    background-color: #ea8a1d;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "sans-serif";
+}
+[data-column-id="departmentAction"].rdt_TableCol {
+    background-color: #ea8a1d;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "sans-serif";
+    border-top-right-radius: 10px;
+}
