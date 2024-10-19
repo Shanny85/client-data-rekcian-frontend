@@ -12,7 +12,7 @@ const AdminSummary = () => {
     useEffect(() => {
         const fetchEmployees = async () => {
             try {
-                const response = await axios.get('https://rekciana.vercel.app/api/employee', {
+                const response = await axios.get('https://client-data-rekcian-api.vercel.app/api/employee', {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                     },

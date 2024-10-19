@@ -77,7 +77,7 @@ const AddEmployee = () => {
         });
 
         try {
-            const response = await axios.post('https://rekciana.vercel.app/api/employee/add', dataForFormObj, {
+            const response = await axios.post('https://client-data-rekcian-api.vercel.app/api/employee/add', dataForFormObj, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }

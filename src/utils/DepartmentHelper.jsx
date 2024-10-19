@@ -38,7 +38,7 @@ export const DepartmentButtons = ({ _id, onDeleteDepartment }) => {
         if (departmentIdToDelete) {
             try {
                 const response = await axios.delete(
-                    `https://rekciana.vercel.app/api/department/${departmentIdToDelete}`,
+                    `https://client-data-rekcian-api.vercel.app/api/department/${departmentIdToDelete}`,
                     {
                         headers: {
                             Authorization: `Bearer ${localStorage.getItem("token")}`

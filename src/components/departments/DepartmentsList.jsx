@@ -22,7 +22,7 @@ const DepartmentsList = () => {
     const fetchDepartments = async () => {
         setDeptLoading(true);
         try {
-            const response = await axios.get('https://rekciana.vercel.app/api/department', {
+            const response = await axios.get('https://client-data-rekcian-api.vercel.app/api/department', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },

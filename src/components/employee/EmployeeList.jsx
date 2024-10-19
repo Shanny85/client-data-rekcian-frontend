@@ -18,7 +18,7 @@ const EmployeeList = () => {
     const fetchEmployees = async () => {
         setEmployeeLoading(true);
         try {
-            const response = await axios.get('https://rekciana.vercel.app/api/employee', {
+            const response = await axios.get('https://client-data-rekcian-api.vercel.app/api/employee', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },

@@ -18,7 +18,7 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                "https://rekciana.vercel.app/api/auth/login",
+                'https://client-data-rekcian-api.vercel.app/api/auth/login',
                 { email, password }
             );
 

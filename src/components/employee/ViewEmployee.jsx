@@ -10,7 +10,7 @@ const ViewEmployee = () => {
     useEffect(() => {
         const fetchEmployee = async () => {
             try {
-                const response = await axios.get(`https://rekciana.vercel.app/api/employee/${id}`, {
+                const response = await axios.get(`https://client-data-rekcian-api.vercel.app/api/employee/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
