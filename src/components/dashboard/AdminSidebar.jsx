@@ -20,7 +20,7 @@ const AdminSidebar = () => {
                 <NavLink
                     to="/admin-dashboard"
                     className={({ isActive }) =>
-                        `${isActive ? `bg-emerald-700 text-gray-800 font-bold` : ""} 
+                        `${isActive ? `bg-emerald-700 text-lime-400 font-bold` : ""} 
                         flex items-center space-x-4 py-2.5 px-4 rounded font-titillium`}
                     end
                 >
@@ -38,7 +38,7 @@ const AdminSidebar = () => {
                 <NavLink
                     to="/admin-dashboard/employee"
                     className={({ isActive }) =>
-                        `${isActive ? "bg-emerald-700 text-gray-800 font-bold" : ""} 
+                        `${isActive ? "bg-emerald-700 text-lime-400 font-bold" : ""} 
                         flex items-center space-x-4 py-2.5 px-4 rounded font-titillium`}
                 >
                     {({ isActive }) => (

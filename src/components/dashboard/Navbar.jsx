@@ -12,7 +12,7 @@ const Navbar = () => {
     };
 
     return (
-        <div id="navBar" className="flex items-center text-white justify-between h-12 bg-emerald-700 px-5 sticky top-0 z-50">
+        <div id="navBar" className="flex items-center text-lime-400 justify-between h-12 bg-emerald-700 px-5 sticky top-0 z-50">
             <p className="font-titillium">Welcome {user.name}</p>
             <button
                 onClick={handleLogout} // Add click handler for logout

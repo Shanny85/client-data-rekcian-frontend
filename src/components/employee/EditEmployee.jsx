@@ -68,13 +68,13 @@ const EditEmployee = () => {
     return (
         <>
             {employee ? (
-                <div className="max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md">
-                    <h2 className="text-2xl font-bold mb-6 font-titillium">Edit {employee.name} {employee.last_name}'s Details</h2>
+                <div className="max-w-3xl mx-auto mt-10 bg-green-900 p-8 rounded-md shadow-md">
+                    <h2 className="text-center text-2xl text-lime-400 font-bold mb-6 font-titillium">Edit {employee.name} {employee.last_name}'s Details</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {/* Employee name */}
                             <div>
-                                <label htmlFor="name" className="text-sm font-medium text-gray-700">Name</label>
+                                <label htmlFor="name" className="text-sm font-medium text-lime-200">Name</label>
                                 <input
                                     type="text"
                                     name="name"
@@ -82,12 +82,12 @@ const EditEmployee = () => {
                                     required
                                     value={employee.name}
                                     onChange={handleChange}
-                                    className="mt-1 w-full p-2 border border-gray-300 rounded-md"
+                                    className="mt-1 w-full p-2 rounded-md bg-lime-100"
                                 />
                             </div>
                             {/*Last Name*/}
                             <div>
-                                <label htmlFor="last_name" className="text-sm font-medium text-gray-700">Last Name</label>
+                                <label htmlFor="last_name" className="text-sm font-medium text-lime-300">Last Name</label>
                                 <input
                                     type="text"
                                     name="last_name"
@@ -95,12 +95,12 @@ const EditEmployee = () => {
                                     required
                                     value={employee.last_name}
                                     onChange={handleChange}
-                                    className="mt-1 w-full p-2 border border-gray-300 rounded-md"
+                                    className="mt-1 w-full p-2 rounded-md bg-lime-100"
                                 />
                             </div>
                             {/* Employee email */}
                             <div className="mt-1">
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                                <label htmlFor="email" className="block text-sm font-medium text-lime-300">Email</label>
                                 <input
                                     type="email"
                                     name="email"
@@ -108,12 +108,12 @@ const EditEmployee = () => {
                                     value={employee.email}
                                     required
                                     onChange={handleChange}
-                                    className="mt-1 w-full p-2 border border-gray-300 rounded-md"
+                                    className="mt-1 w-full p-2 rounded-md bg-lime-100"
                                 />
                             </div>
                             {/* phone number */}
                             <div className="mt-1">
-                                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
+                                <label htmlFor="phone" className="block text-sm font-medium text-lime-300">Phone Number</label>
                                 <input
                                     type="tel"
                                     name="phone"
@@ -121,7 +121,7 @@ const EditEmployee = () => {
                                     required
                                     value={employee.phone}
                                     onChange={handleChange}
-                                    className="mt-1 w-full p-2 border border-gray-300 rounded-md"
+                                    className="mt-1 w-full p-2 rounded-md bg-lime-100"
                                 />
                             </div>
 
