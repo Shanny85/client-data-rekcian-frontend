@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import ConfirmModal from '../modals/ConfirmModal.jsx';
 import {FaPencilAlt, FaTrashAlt} from "react-icons/fa";
+import {urlHelper} from "./UrlHelper.jsx";
 
 export const columns = [
     {
@@ -38,7 +39,7 @@ export const DepartmentButtons = ({ _id, onDeleteDepartment }) => {
         if (departmentIdToDelete) {
             try {
                 const response = await axios.delete(
-                    `https://client-data-rekcian-api.vercel.app/api/department/${departmentIdToDelete}`,
+                    `${urlHelper}/api/department/${departmentIdToDelete}`,
                     {
                         headers: {
                             Authorization: `Bearer ${localStorage.getItem("token")}`

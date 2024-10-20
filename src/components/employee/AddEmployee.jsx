@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { fetchDepartments } from "../../utils/EmployeeHelper.jsx";
+import { urlHelper } from "../../utils/UrlHelper.jsx";
 
 const AddEmployee = () => {
     const [departments, setDepartment] = useState([]);
@@ -62,7 +63,7 @@ const AddEmployee = () => {
         e.preventDefault();
 
         // Check if the user is 18 years or older
-        const dob = dataForForm.employee_dob;
+        const dob = dataForForm.dob;
         if (dob && calculateAge(dob) < 18) {
             setWarningVisible(true);
             return;
@@ -77,7 +78,7 @@ const AddEmployee = () => {
         });
 
         try {
-            const response = await axios.post('https://client-data-rekcian-api.vercel.app/api/employee/add', dataForFormObj, {
+            const response = await axios.post(`${urlHelper}/api/employee/add`, dataForFormObj, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }

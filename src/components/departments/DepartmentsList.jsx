@@ -4,6 +4,7 @@ import DataTable from 'react-data-table-component';
 import { columns, DepartmentButtons } from '../../utils/DepartmentHelper.jsx';
 import axios from 'axios';
 import { FaPlus } from 'react-icons/fa'; // Import the plus icon
+import { urlHelper } from "../../utils/UrlHelper.jsx";
 
 const DepartmentsList = () => {
     const [departments, setDepartments] = useState([]);
@@ -22,7 +23,7 @@ const DepartmentsList = () => {
     const fetchDepartments = async () => {
         setDeptLoading(true);
         try {
-            const response = await axios.get('https://client-data-rekcian-api.vercel.app/api/department', {
+            const response = await axios.get(`${urlHelper}/api/department`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },

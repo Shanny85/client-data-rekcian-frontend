@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import logo from "../../assets/rekcian_logo.png";
 import axios from "axios";
+import {urlHelper} from "../../utils/UrlHelper.jsx";
 
 const ViewEmployee = () => {
     const {id} = useParams();
@@ -10,7 +11,7 @@ const ViewEmployee = () => {
     useEffect(() => {
         const fetchEmployee = async () => {
             try {
-                const response = await axios.get(`https://client-data-rekcian-api.vercel.app/api/employee/${id}`, {
+                const response = await axios.get(`${urlHelper}/api/employee/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }

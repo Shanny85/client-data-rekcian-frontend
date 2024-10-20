@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import {urlHelper} from "../utils/UrlHelper.jsx";
+
 
 const UserContext = createContext();
 
@@ -12,7 +14,7 @@ const AuthProvider = ({ children }) => {
             try {
                 const token = localStorage.getItem("token");
                 if (token) {
-                    const response = await axios.get("https://client-data-rekcian-api.vercel.app/api/auth/verify", {
+                    const response = await axios.get(`${urlHelper}/api/auth/verify`, {
                         headers: {
                             Authorization: `Bearer ${token}`,
                         },

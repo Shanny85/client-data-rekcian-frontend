@@ -1,6 +1,6 @@
 import axios from "axios";
 import {FaCalendarDay, FaEye, FaMoneyBillWaveAlt, FaPencilAlt, FaTrashAlt} from "react-icons/fa";
-
+import {urlHelper} from "./UrlHelper.jsx";
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
@@ -42,7 +42,7 @@ export const columns = [
 export const fetchDepartments = async () => {
     let departments
     try {
-        const response = await axios.get('https://client-data-rekcian-api.vercel.app/api/department', {
+        const response = await axios.get(`${urlHelper}/api/department`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },

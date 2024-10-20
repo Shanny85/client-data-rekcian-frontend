@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchDepartments } from "../../utils/EmployeeHelper.jsx";
+import { urlHelper } from "../../utils/UrlHelper.jsx";
 
 const EditEmployee = () => {
     const [employee, setEmployee] = useState({
@@ -16,7 +16,7 @@ const EditEmployee = () => {
     useEffect(() => {
         const fetchEmployee = async () => {
             try {
-                const response = await axios.get(`https://client-data-rekcian-api.vercel.app/api/employee/${id}`, {
+                const response = await axios.get(`${urlHelper}/api/employee/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
@@ -48,7 +48,7 @@ const EditEmployee = () => {
         e.preventDefault(); // Prevent default form submission
 
         try {
-            const response = await axios.put(`https://client-data-rekcian-api.vercel.app/api/employee/${id}`, employee, {
+            const response = await axios.put(`${urlHelper}/api/employee/${id}`, employee, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }

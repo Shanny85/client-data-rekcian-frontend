@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
+import { urlHelper } from "../../utils/UrlHelper.jsx";
 
 const EditDepartment = () => {
     const {id} = useParams();
@@ -12,7 +13,7 @@ const EditDepartment = () => {
         const fetchDepartments = async () => {
             setDeptLoading(true)
             try {
-                const response = await axios.get(`https://client-data-rekcian-api.vercel.app/api/department/${id}`, {
+                const response = await axios.get(`${urlHelper}/api/department/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
@@ -44,7 +45,7 @@ const EditDepartment = () => {
 
         try {
             const response = await axios.put(
-                `https://rekciana.vercel.app/api/department/${id}`, // Correct URL for PUT request
+                `${urlHelper}/api/department/${id}`, // Correct URL for PUT request
                 department, // The updated department data
                 {
                     headers: {

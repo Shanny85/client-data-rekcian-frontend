@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { useAuth } from "../context/authContext.jsx";
 import { useNavigate } from "react-router-dom";
+import { urlHelper } from "../utils/UrlHelper.jsx";
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -18,7 +19,7 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                'https://client-data-rekcian-api.vercel.app/api/auth/login',
+                `${urlHelper}/api/auth/login`,
                 { email, password }
             );
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SummaryCard from "./SummaryCard.jsx";
 import { FaUsers } from "react-icons/fa";
 import axios from 'axios';
+import { urlHelper } from "../../utils/UrlHelper.jsx";
 
 const AdminSummary = () => {
     const [employees, setEmployees] = useState([]); // State to hold all employees
@@ -12,7 +13,7 @@ const AdminSummary = () => {
     useEffect(() => {
         const fetchEmployees = async () => {
             try {
-                const response = await axios.get('https://client-data-rekcian-api.vercel.app/api/employee', {
+                const response = await axios.get(`${urlHelper}/api/employee`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                     },

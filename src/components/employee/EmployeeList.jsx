@@ -4,6 +4,7 @@ import DataTable from 'react-data-table-component';
 import axios from 'axios';
 import { FaPlus } from 'react-icons/fa';
 import {columns, EmployeeButtons} from "../../utils/EmployeeHelper.jsx";
+import {urlHelper} from "../../utils/UrlHelper.jsx";
 
 const EmployeeList = () => {
     const [employees, setEmployees] = useState([]);
@@ -18,7 +19,7 @@ const EmployeeList = () => {
     const fetchEmployees = async () => {
         setEmployeeLoading(true);
         try {
-            const response = await axios.get('https://client-data-rekcian-api.vercel.app/api/employee', {
+            const response = await axios.get(`${urlHelper}/api/employee`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },

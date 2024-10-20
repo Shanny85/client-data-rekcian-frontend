@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { urlHelper } from "../../utils/UrlHelper.jsx";
 
 const AddDepartment = () => {
     const [department, setDepartment] = useState({
@@ -18,7 +19,7 @@ const AddDepartment = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://client-data-rekcian-api.vercel.app/api/department/add', department, {
+            const response = await axios.post(`${urlHelper}/api/department/add`, department, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }
