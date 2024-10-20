@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { fetchDepartments } from "../../utils/EmployeeHelper.jsx";
 import { urlHelper } from "../../utils/UrlHelper.jsx";
 
 const AddEmployee = () => {
-    const [departments, setDepartment] = useState([]);
     const [dataForForm, setDataForForm] = useState({});
     const [warningVisible, setWarningVisible] = useState(false);
     const navigate = useNavigate();
@@ -13,25 +11,20 @@ const AddEmployee = () => {
     // Function to generate a unique employee ID
     const generateEmployeeId = () => {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        let result = '';
+        let employee_id = '';
         for (let i = 0; i < 5; i++) {
-            result += characters.charAt(Math.floor(Math.random() * characters.length));
+            employee_id += characters.charAt(Math.floor(Math.random() * characters.length));
         }
-        return result;
+        return employee_id;
     };
 
+    // Set employee ID on component mount
     useEffect(() => {
-        const getDepartments = async () => {
-            const departments = await fetchDepartments();
-            setDepartment(departments);
-        };
-        getDepartments().then(() => {
-            // Set the initial employee ID
-            setDataForForm(prevData => ({
-                ...prevData,
-                employee_id: generateEmployeeId()
-            }));
-        });
+        const newEmployeeId = generateEmployeeId();
+        setDataForForm((prevData) => ({
+            ...prevData,
+            employee_id: newEmployeeId // Set the generated employee ID
+        }));
     }, []);
 
     const handleChange = (e) => {
@@ -218,18 +211,6 @@ const AddEmployee = () => {
                             <option value="recreational">Recreational</option>
                             <option value="culinary">Culinary</option>
                         </select>
-                    </div>
-                    {/* Employee password */}
-                    <div>
-                        <label htmlFor="employee_pass" className="block text-sm font-medium text-lime-300"></label>
-                        <input
-                            type="password"
-                            name="employee_pass"
-                            value={dataForForm.employee_id || ''}
-                            readOnly
-                            onChange={handleChange}
-                            className="hidden mt-1 p-2 block w-full border border-gray-300 rounded-md"
-                        />
                     </div>
                 </div>
                 <button

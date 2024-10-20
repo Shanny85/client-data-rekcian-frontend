@@ -1,6 +1,4 @@
-import axios from "axios";
-import {FaCalendarDay, FaEye, FaMoneyBillWaveAlt, FaPencilAlt, FaTrashAlt} from "react-icons/fa";
-import {urlHelper} from "./UrlHelper.jsx";
+import {FaEye, FaPencilAlt} from "react-icons/fa";
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
@@ -38,26 +36,6 @@ export const columns = [
         center: "true"
     }
 ];
-
-export const fetchDepartments = async () => {
-    let departments
-    try {
-        const response = await axios.get(`${urlHelper}/api/department`, {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
-            },
-        });
-
-        if (response.data.success) {
-            departments = response.data.departments;
-        }
-    } catch (error) {
-        if (error.response && !error.response.data.success) {
-            alert(error.response.data.error);
-        }
-    }
-    return departments;
-};
 
 export const EmployeeButtons = ({ _id}) => {
     const navigate = useNavigate();
