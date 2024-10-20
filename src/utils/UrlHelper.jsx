@@ -1,1 +1,1 @@
-export const urlHelper = "http://localhost:3000";
+export const urlHelper = "https://rekcian-api.vercel.app";
